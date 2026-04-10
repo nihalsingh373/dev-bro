@@ -10,17 +10,17 @@ const TESTIMONIALS = [
     id: "t1",
     quote:
       "The Umero platform handled our rental bookings seamlessly. The interface is clean, fast, and has been completely reliable since day one. Our customers love how smooth the experience is.",
-    name: "— Replace with real name",
+    name: "Founder[umero]",
     role: "Business Owner",
     // ↑ Replace with the kiting business owner's actual name and role
     // e.g. "Founder, [Business Name]"
-    accent: "var(--accent)",  // purple
+    accent: "var(--accent)", // purple
   },
   {
     id: "t2",
     quote:
-      "Our platform built by DevBros was selected for funding at our college innovation programme. The technical quality genuinely impressed the selection committee — the code is clean, well-structured and production-ready.",
-    name: "— Replace with your friend's name",
+      "Our platform built by DevBros was selected for the final round of business tank directly at our college innovation programme. The technical quality genuinely impressed the selection committee — the code is clean, well-structured and production-ready.",
+    name: "[CoHabit]",
     role: "Founder · College Innovation Programme",
     // ↑ Replace with friend's actual name + college name
     accent: "var(--accent2)", // pink-purple
@@ -29,8 +29,8 @@ const TESTIMONIALS = [
     id: "t3",
     quote:
       "Working with DevBros was straightforward and professional. They understood exactly what was needed, delivered on time, and the work they produced is something I'm proud to put my name on.",
-    name: "— Replace with 3rd person's name",
-    role: "Replace with their role",
+    name: "Atif[Owner]",
+    role: "Add Agency",
     // ↑ Replace with your 3rd real contact
     accent: "var(--accent)",
   },
@@ -42,7 +42,9 @@ export default function TestimonialsSection({ visible }: TestimonialsProps) {
   useEffect(() => {
     if (!ref.current) return;
     ref.current.style.opacity = visible ? "1" : "0";
-    ref.current.style.transform = visible ? "translateY(0)" : "translateY(28px)";
+    ref.current.style.transform = visible
+      ? "translateY(0)"
+      : "translateY(28px)";
     ref.current.style.pointerEvents = visible ? "auto" : "none";
   }, [visible]);
 
@@ -65,7 +67,6 @@ export default function TestimonialsSection({ visible }: TestimonialsProps) {
       }}
     >
       <div style={{ maxWidth: "920px", width: "100%" }}>
-
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <p
@@ -109,7 +110,8 @@ export default function TestimonialsSection({ visible }: TestimonialsProps) {
               key={t.id}
               style={{
                 padding: "28px 24px",
-                borderRight: i < 2 ? "1px solid rgba(255,255,255,0.06)" : "none",
+                borderRight:
+                  i < 2 ? "1px solid rgba(255,255,255,0.06)" : "none",
                 position: "relative",
                 display: "flex",
                 flexDirection: "column",
@@ -203,7 +205,6 @@ export default function TestimonialsSection({ visible }: TestimonialsProps) {
             Real clients · Real products · Based in India, working globally
           </p>
         </div>
-
       </div>
     </div>
   );

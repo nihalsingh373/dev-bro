@@ -10,9 +10,9 @@ export default function SmoothScroll({
 }) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.4, // smoothness (1.2–1.6 sweet spot)
+      duration: 1.4,
       smoothWheel: true,
-      smoothTouch: true,
+      syncTouch: true,
     });
 
     function raf(time: number) {
