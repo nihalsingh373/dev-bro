@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { type SectionId } from "@/app/hooks/useScroll";
 
@@ -21,6 +22,7 @@ const item: Variants = {
 const CAL_URL = "https://cal.com/nihal-rajput-9ibwly/secret";
 
 export default function HeroSection({ visible, goTo }: HeroProps) {
+  const router = useRouter();
   return (
     <AnimatePresence>
       {visible && (
@@ -102,7 +104,7 @@ export default function HeroSection({ visible, goTo }: HeroProps) {
             {/* See Our Work — scrolls to portfolio section */}
             <button
               data-cursor="hover"
-              onClick={() => goTo("clients")}
+              onClick={() => router.push("/projects")}
               style={{
                 background: "var(--accent)",
                 color: "#fff",
@@ -175,7 +177,8 @@ export default function HeroSection({ visible, goTo }: HeroProps) {
               style={{
                 width: "1px",
                 height: "32px",
-                background: "linear-gradient(to bottom,rgba(240,235,224,0.3),transparent)",
+                background:
+                  "linear-gradient(to bottom,rgba(240,235,224,0.3),transparent)",
                 margin: "0 auto",
                 animation: "scrollPulse 2s ease-in-out infinite",
               }}

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SmoothScroll from "./components/layout/SmoothScroll";
+import Cursor from "./components/cursor/Cursor";
+import Spotlight from "./components/cursor/Spotlight";
 
 export const metadata: Metadata = {
   title: "DevBros — Built to convert. Designed to last.",
@@ -28,6 +30,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Cursor />
+        <Spotlight />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
